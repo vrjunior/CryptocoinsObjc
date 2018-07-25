@@ -13,6 +13,10 @@
 		D286A8972108FEC80037BEDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D286A8962108FEC80037BEDC /* Assets.xcassets */; };
 		D286A89A2108FEC80037BEDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D286A8982108FEC80037BEDC /* LaunchScreen.storyboard */; };
 		D286A89D2108FEC80037BEDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D286A89C2108FEC80037BEDC /* main.m */; };
+		D286A8AB210900350037BEDC /* Ticker.m in Sources */ = {isa = PBXBuildFile; fileRef = D286A8AA210900350037BEDC /* Ticker.m */; };
+		D286A8AE210902250037BEDC /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = D286A8AD210902250037BEDC /* Quote.m */; };
+		D286A8B2210904000037BEDC /* TickerServices.m in Sources */ = {isa = PBXBuildFile; fileRef = D286A8B1210904000037BEDC /* TickerServices.m */; };
+		D286A8B621091C7A0037BEDC /* CoinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D286A8B521091C7A0037BEDC /* CoinCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		D286A8992108FEC80037BEDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D286A89B2108FEC80037BEDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D286A89C2108FEC80037BEDC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D286A8A9210900350037BEDC /* Ticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ticker.h; sourceTree = "<group>"; };
+		D286A8AA210900350037BEDC /* Ticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ticker.m; sourceTree = "<group>"; };
+		D286A8AC210902250037BEDC /* Quote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quote.h; sourceTree = "<group>"; };
+		D286A8AD210902250037BEDC /* Quote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Quote.m; sourceTree = "<group>"; };
+		D286A8B0210904000037BEDC /* TickerServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TickerServices.h; sourceTree = "<group>"; };
+		D286A8B1210904000037BEDC /* TickerServices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TickerServices.m; sourceTree = "<group>"; };
+		D286A8B421091C7A0037BEDC /* CoinCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinCell.h; sourceTree = "<group>"; };
+		D286A8B521091C7A0037BEDC /* CoinCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,17 +70,73 @@
 		D286A88C2108FEC60037BEDC /* CryptocoinsObjc */ = {
 			isa = PBXGroup;
 			children = (
+				D286A8A72108FFF80037BEDC /* Model */,
+				D286A8A42108FFD30037BEDC /* Controller */,
+				D286A8A32108FFC40037BEDC /* View */,
 				D286A88D2108FEC60037BEDC /* AppDelegate.h */,
 				D286A88E2108FEC60037BEDC /* AppDelegate.m */,
-				D286A8902108FEC60037BEDC /* ViewController.h */,
-				D286A8912108FEC60037BEDC /* ViewController.m */,
-				D286A8932108FEC60037BEDC /* Main.storyboard */,
 				D286A8962108FEC80037BEDC /* Assets.xcassets */,
-				D286A8982108FEC80037BEDC /* LaunchScreen.storyboard */,
 				D286A89B2108FEC80037BEDC /* Info.plist */,
 				D286A89C2108FEC80037BEDC /* main.m */,
 			);
 			path = CryptocoinsObjc;
+			sourceTree = "<group>";
+		};
+		D286A8A32108FFC40037BEDC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D286A8B321091C600037BEDC /* Cell */,
+				D286A8982108FEC80037BEDC /* LaunchScreen.storyboard */,
+				D286A8932108FEC60037BEDC /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D286A8A42108FFD30037BEDC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D286A8902108FEC60037BEDC /* ViewController.h */,
+				D286A8912108FEC60037BEDC /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D286A8A72108FFF80037BEDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D286A8AF210903980037BEDC /* Services */,
+				D286A8A8210900080037BEDC /* VO */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D286A8A8210900080037BEDC /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				D286A8A9210900350037BEDC /* Ticker.h */,
+				D286A8AA210900350037BEDC /* Ticker.m */,
+				D286A8AC210902250037BEDC /* Quote.h */,
+				D286A8AD210902250037BEDC /* Quote.m */,
+			);
+			name = VO;
+			sourceTree = "<group>";
+		};
+		D286A8AF210903980037BEDC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D286A8B0210904000037BEDC /* TickerServices.h */,
+				D286A8B1210904000037BEDC /* TickerServices.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D286A8B321091C600037BEDC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D286A8B421091C7A0037BEDC /* CoinCell.h */,
+				D286A8B521091C7A0037BEDC /* CoinCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +210,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D286A8922108FEC60037BEDC /* ViewController.m in Sources */,
+				D286A8B2210904000037BEDC /* TickerServices.m in Sources */,
+				D286A8AB210900350037BEDC /* Ticker.m in Sources */,
 				D286A89D2108FEC80037BEDC /* main.m in Sources */,
+				D286A8AE210902250037BEDC /* Quote.m in Sources */,
+				D286A8B621091C7A0037BEDC /* CoinCell.m in Sources */,
 				D286A88F2108FEC60037BEDC /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

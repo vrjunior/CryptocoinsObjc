@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CoinCell.h
 //  CryptocoinsObjc
 //
 //  Created by Valmir Junior on 25/07/18.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UITableViewDataSource>
+@interface CoinCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *name;
 
 @end
-
