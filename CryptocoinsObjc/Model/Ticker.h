@@ -11,7 +11,7 @@
 @class Quote;
 
 @interface Ticker : NSObject
-    @property (nonatomic, readwrite) NSInteger* tickerId;
+    @property (nonatomic, readwrite) NSInteger tickerId;
     @property (nonatomic, readwrite) NSString* name;
     @property (nonatomic, readwrite) NSString* symbol;
     @property (nonatomic, readwrite) NSDate* lastUpdate;

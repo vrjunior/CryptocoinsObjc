@@ -10,6 +10,7 @@
 #import "TickerServices.h"
 #import "CoinCell.h"
 #import "Ticker.h"
+#import "Quote.h"
 
 @interface ViewController ()
     @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -62,6 +63,11 @@ NSMutableArray<Ticker *> * tickers;
     
     [coinCell.name setText:currentTicker.name];
     
+    NSString* usdQuote = [[NSString alloc]
+                          initWithFormat:@"USD %.2f", currentTicker.usdQuote.price.doubleValue];
+    
+    [coinCell.currentUsdPrice setText:usdQuote];
+    
     return coinCell;
     
 }
@@ -71,7 +77,7 @@ NSMutableArray<Ticker *> * tickers;
         return [tickers count];
     }
     
-    return @0;
+    return [@0 integerValue]; 
 }
 
 

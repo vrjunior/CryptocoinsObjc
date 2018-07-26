@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-1413" y="18"/>
         </scene>
-        <!--View Controller-->
+        <!--Market Value-->
         <scene sceneID="2qr-4Y-D75">
             <objects>
                 <viewController id="f25-lt-oqq" customClass="ViewController" sceneMemberID="viewController">
@@ -45,16 +45,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNX-zo-sgO">
-                                                    <rect key="frame" x="15" y="23" width="46" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNX-zo-sgO">
+                                                    <rect key="frame" x="15" y="23" width="298" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAR-mS-YQY">
+                                                    <rect key="frame" x="323" y="23" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WNX-zo-sgO" firstAttribute="centerY" secondItem="Cu7-wt-xQb" secondAttribute="centerY" id="Igy-e9-Mzn"/>
+                                                <constraint firstItem="KAR-mS-YQY" firstAttribute="centerY" secondItem="WNX-zo-sgO" secondAttribute="centerY" id="Qma-NC-oEb"/>
+                                                <constraint firstItem="WNX-zo-sgO" firstAttribute="leading" secondItem="Cu7-wt-xQb" secondAttribute="leading" constant="15" id="cdR-fE-An8"/>
+                                                <constraint firstAttribute="trailing" secondItem="KAR-mS-YQY" secondAttribute="trailing" constant="10" id="fY4-qc-5cu"/>
+                                                <constraint firstItem="KAR-mS-YQY" firstAttribute="leading" secondItem="WNX-zo-sgO" secondAttribute="trailing" constant="10" id="xum-Vo-fvy"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="currentUsdPrice" destination="KAR-mS-YQY" id="z2V-nl-w7D"/>
                                             <outlet property="name" destination="WNX-zo-sgO" id="aIh-Cq-D1M"/>
                                         </connections>
                                     </tableViewCell>
@@ -70,7 +83,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wGj-iY-Pev"/>
                     </view>
-                    <navigationItem key="navigationItem" id="306-Hi-ayx"/>
+                    <navigationItem key="navigationItem" title="Market Value" id="306-Hi-ayx"/>
                     <connections>
                         <outlet property="tableView" destination="V2I-TD-Of4" id="VVW-7D-Vdh"/>
                     </connections>

@@ -11,5 +11,6 @@
 @interface CoinCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *currentUsdPrice;
 
 @end

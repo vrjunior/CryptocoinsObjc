@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TickerServices.h"
 #import "Ticker.h"
+#import "Quote.h"
 
 @interface TickerServices()
 
@@ -18,7 +19,7 @@
 @implementation TickerServices
 
 -(void) retriveTickersWithCompletion: (void(^)(NSMutableArray<Ticker*>*, NSError* error))callback {
-    NSString *endpoint = @"https://api.coinmarketcap.com/v2/ticker/";
+    NSString *endpoint = @"https://api.coinmarketcap.com/v2/ticker/?sort=rank";
     
     NSURL *url = [[NSURL alloc] initWithString:endpoint];
     
@@ -81,7 +82,22 @@
     ticker.name = (NSString *)[json valueForKey:@"name"];
     ticker.symbol = (NSString *)[json valueForKey:@"symbol"];
     
+    NSDictionary* quotesJson = (NSDictionary *)[json valueForKey:@"quotes"];
+    NSDictionary* usdQuoteJson = (NSDictionary *)[quotesJson valueForKey:@"USD"];
+    
+    ticker.usdQuote = [self parseQuote:usdQuoteJson];
+    
     return ticker;
+}
+
+-(Quote *) parseQuote:(NSDictionary *) json {
+    
+    Quote *quote = [Quote new];
+    
+    quote.price = (NSDecimalNumber *)[json valueForKey:@"price"];
+    quote.percentChange24h = (NSNumber *)[json valueForKey:@"percent_change_24h"];
+    
+    return quote;
 }
 
 @end

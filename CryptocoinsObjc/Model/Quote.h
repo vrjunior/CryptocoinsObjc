@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Quote : NSObject
-    @property (nonatomic, readwrite) double* symbol;
-    @property (nonatomic, readwrite) double* percentChange24h;
+    @property (nonatomic, readwrite) NSDecimalNumber* price;
+    @property (nonatomic, readwrite) NSNumber* percentChange24h;
 @end
